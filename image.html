@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <style>
+            * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ html,
+ body {
+     margin: 0;
+     padding: 0;
+     /* background: #000; */
+     /* MOST IMPORTANT */
+     overflow-x: hidden;
+ }
+ .main{
+     width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+ }
+ .imagebox{
+    height: auto;
+   width: 80%;
+ }
+ .imagebox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+ }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+<div class="imagebox">
+    <img src="./portfolio website.jpg">
+</div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>    
+<script>
+const scroll = new LocomotiveScroll({
+    el: document.querySelector('.main'),
+    smooth: true
+});
+
+</script>
+</body>
+</html>

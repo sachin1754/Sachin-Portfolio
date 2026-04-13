@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+        .main{
+           height: 100%;
+           width: 100%;
+           background-color: antiquewhite;          
+        }
+        .box1 {
+           background-color: rgb(9, 88, 88);
+           height: 500px;
+           width: 500px;
+           animation-name: anime;
+           animation-duration: 2s;
+           position: absolute;
+           /* animation-fill-mode: forwards; (animation isse end. me rukk jaata h jaha a to b me stop hota h ) */
+           /* animation-iteration-count: infinite; (isse animation lagatar chalte rehta h isse hame jitni baar animation chalana h utna likh skte h jaise 2) */
+        /* animation-direction: reverse; */
+        animation-timing-function: ease-in;
+        }
+        @keyframes anime{
+            from{
+               left: 0;
+               background-color: rgb(157, 88, 4);
+               rotate: 0;
+            }
+            to{
+                left: 65%;
+                background-color: blue;
+                rotate: 90deg;
+            }
+        }
+        
+</style>
+</head>
+<body>
+  <div class="main">
+  <div class="box1"></div>
+</div>
+   
+</html>
+
+

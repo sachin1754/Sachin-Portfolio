@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Horizontal Scroll Gallery</title>
+   <style>
+    body {
+  margin: 0;
+  background: #f5f5f5;
+  font-family: sans-serif;
+}
+
+.gallery-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery img {
+  height: 350px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Zoom */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Arrows */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.left {
+  left: -10px;
+}
+
+.right {
+  right: -10px;
+}
+   </style>
+</head>
+
+<body>
+
+    <div class="gallery-wrapper">
+
+        <!-- Left Arrow -->
+        <button class="nav left">&#10094;</button>
+
+        <!-- Scroll Container -->
+        <div class="gallery" id="gallery">
+            <img src="https://picsum.photos/id/1015/400/600">
+            <img src="https://picsum.photos/id/1016/400/600">
+            <img src="https://picsum.photos/id/1018/400/600">
+            <img src="https://picsum.photos/id/1020/400/600">
+            <img src="https://picsum.photos/id/1024/400/600">
+            <img src="https://picsum.photos/id/1027/400/600">
+        </div>
+
+        <!-- Right Arrow -->
+        <button class="nav right">&#10095;</button>
+
+    </div>
+
+    <script src="script.js">
+        const gallery = document.getElementById("gallery");
+
+            document.querySelector(".left").addEventListener("click", () => {
+                gallery.scrollBy({
+                    left: -300,
+                    behavior: "smooth"
+                });
+            });
+
+            document.querySelector(".right").addEventListener("click", () => {
+                gallery.scrollBy({
+                    left: 300,
+                    behavior: "smooth"
+                });
+            });
+
+            /* OPTIONAL AUTO SCROLL (Uncomment if needed) */
+            /*
+            setInterval(() => {
+              gallery.scrollBy({
+                left: 1,
+                behavior: "smooth"
+              });
+            }, 20);
+            */
+    </script>
+</body>
+
+</html>
